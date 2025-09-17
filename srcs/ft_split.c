@@ -6,7 +6,7 @@
 /*   By: pgaillar <pgaillar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 14:36:31 by pgaillar          #+#    #+#             */
-/*   Updated: 2025/08/08 18:13:07 by pgaillar         ###   ########.fr       */
+/*   Updated: 2025/09/17 14:10:22 by pgaillar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,10 +88,3 @@ static void	ft_free(char **result, int j)
 		free(result[j]);
 	free(result);
 }
-
-/*int	main(void)
-{
-	char *s = "hello! allo bonjour";
-	char c = ' ';
-	printf("%d", word_count(s, c));
-}*/

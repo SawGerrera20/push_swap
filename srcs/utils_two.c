@@ -1,33 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   utils_two.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pgaillar <pgaillar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/03 16:43:59 by pgaillar          #+#    #+#             */
-/*   Updated: 2025/08/08 19:54:29 by pgaillar         ###   ########.fr       */
+/*   Updated: 2025/09/16 17:03:04 by pgaillar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-char	*ft_strcat(char *dst, char *src)
+char	*ft_strjoin(char *s1, char *s2)
 {
-	int	i;
-	int	j;
+	size_t	i;
+	size_t	k;
+	char	*dest;
 
 	i = 0;
-	j = 0;
-	while (dst[i] != '\0')
-		i++;
-	while (src[j] != '\0')
+	k = 0;
+	dest = malloc(sizeof(char) * ft_strlen(s1) + ft_strlen(s2) + 1);
+	if (!dest)
+		return (NULL);
+	while (s1[i])
 	{
-		dst[i + j] = src[j];
-		j++;
+		dest[i] = s1[i];
+		i++;
 	}
-	dst[i + j] = '\0';
-	return (dst);
+	while (s2[k])
+	{
+		dest[i] = s2[k];
+		k++;
+		i++;
+	}
+	dest[i] = '\0';
+	free(s1);
+	return (dest);
 }
 
 int	count_number(int n)

@@ -6,7 +6,7 @@
 /*   By: pgaillar <pgaillar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 18:27:09 by pgaillar          #+#    #+#             */
-/*   Updated: 2025/09/08 12:05:26 by pgaillar         ###   ########.fr       */
+/*   Updated: 2025/09/16 16:14:13 by pgaillar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,14 +31,6 @@ void	sort_three(t_stack *stack)
 	}
 	if (stack->top->next->data < stack->top->data)
 		swap_a(stack);
-	/*if (!dernier 3)
-	{
-		if (premier 3)
-			ra
-		else
-			rra
-	}
-	if (2 > 1 swap)*/
 }
 
 int	*get_index(char **temp, int len)
@@ -62,19 +54,7 @@ int	*get_index(char **temp, int len)
 		j++;
 	}
 	sort_in_tab(sort_array, len);
-	// i = 0;
-	// while(i < len)
-	// {
-	// 	printf("sort_array : %d\n", sort_array[i]);
-	// 	i++;
-	// }
 	give_index(array, sort_array, len);
-	// i = 0;
-	// while(i < len)
-	// {
-	// 	printf("array : %d\n", array[i]);
-	// 	i++;
-	// }
 	free(sort_array);
 	return (array);
 }
@@ -110,20 +90,20 @@ void	give_index(int *array, int *sort_array, int len)
 	int	i;
 
 	j = 0;
-	size = len;
+	i = 0;
+	size = len - 1;
 	while (len > 0)
 	{
-		i = 0;
-		while (j <= size)
+		j = 0;
+		while (i <= size)
 		{
-			
-			if (sort_array[j] == array[i])
+			if (array[i] == sort_array[j])
 			{
 				array[i] = j;
-				j++;
+				i++;
 				break ;
 			}
-			i++;
+			j++;
 		}
 		len--;
 	}

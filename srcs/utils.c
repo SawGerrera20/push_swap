@@ -6,11 +6,12 @@
 /*   By: pgaillar <pgaillar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/31 18:40:23 by pgaillar          #+#    #+#             */
-/*   Updated: 2025/09/04 14:33:43 by pgaillar         ###   ########.fr       */
+/*   Updated: 2025/09/16 17:02:41 by pgaillar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include <limits.h>
 
 int	ft_strlen(char *str)
 {
@@ -31,11 +32,11 @@ int	ft_isdigit(int c)
 	return (0);
 }
 
-int	ft_atoi(char *str)
+long long	ft_atoi(char *str)
 {
-	int	i;
-	int	sign;
-	int	res;
+	int			i;
+	long long	sign;
+	long long	res;
 
 	i = 0;
 	sign = 1;
@@ -51,6 +52,8 @@ int	ft_atoi(char *str)
 		i++;
 	while ((str[i]) && (str[i] >= '0') && (str[i] <= '9'))
 	{
+		if (res > INT_MAX)
+			return (LONG_MAX);
 		res = res * 10 + (str[i] - '0');
 		i++;
 	}

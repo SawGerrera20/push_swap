@@ -6,7 +6,7 @@
 /*   By: pgaillar <pgaillar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/31 17:41:30 by pgaillar          #+#    #+#             */
-/*   Updated: 2025/09/08 17:22:52 by pgaillar         ###   ########.fr       */
+/*   Updated: 2025/09/16 16:13:35 by pgaillar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,17 +49,21 @@ t_node	*traverse(t_stack *stack)
 	return (ptr);
 }
 
-void	print(t_stack *stack)
-{
-	t_node	*ptr;
+// void	print(t_stack *stack)
+// {
+// 	t_node	*ptr;
 
-	ptr = stack->top;
-	do
-	{
-		printf("%d\n", stack->top->data);
-		stack->top = stack->top->next;
-	} while (stack->top != ptr);
-}
+// 	if (stack->top == NULL)
+// 	{
+// 		return ;
+// 	}
+// 	ptr = stack->top;
+// 	do
+// 	{
+// 		printf("%d\n", stack->top->data);
+// 		stack->top = stack->top->next;
+// 	} while (stack->top != ptr);
+// }
 
 void	free_the_list(t_stack *stack)
 {
@@ -83,6 +87,8 @@ int	ft_lstsize(t_stack *stack)
 	int		i;
 	t_node	*temp;
 
+	if (!stack->top)
+		return (0);
 	i = 0;
 	temp = stack->top;
 	temp = temp->next;

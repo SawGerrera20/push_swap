@@ -6,7 +6,7 @@
 #    By: pgaillar <pgaillar@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/03 17:21:25 by pgaillar          #+#    #+#              #
-#    Updated: 2025/09/04 15:44:50 by pgaillar         ###   ########.fr        #
+#    Updated: 2025/09/12 21:55:41 by pgaillar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,8 +16,8 @@ SRCS_DIR = ./srcs/
 OBJS_DIR = ./.objs/
 INCLUDES = ./includes/
 
-SRCS = push_swap.c push_swap_utils.c push_swap_commands.c parsing.c \
-		utils.c ft_split.c ft_strcat.c check_input.c sort.c \
+SRCS = push_swap.c push_swap_utils.c push.c parsing.c \
+		utils.c ft_split.c utils_two.c check_input.c sort.c \
 		rotate.c reverse_rotate.c swap.c radix.c\
 
 OBJS = $(addprefix $(OBJS_DIR), $(SRCS:.c=.o))
